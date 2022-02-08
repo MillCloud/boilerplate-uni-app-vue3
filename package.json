@@ -58,7 +58,7 @@
     "@iconify/vue": "~3.1.3",
     "@modyqyw/utils": "~2.1.2",
     "@vueuse/core": "~7.5.5",
-    "@vueuse/integrations": "~7.5.5",
+    "@vueuse/integrations": "~7.6.0",
     "color": "~4.2.0",
     "dayjs": "~1.10.7",
     "pinia": "~2.0.11",
