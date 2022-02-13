@@ -70,7 +70,7 @@
   "devDependencies": {
     "@babel/core": "~7.17.2",
     "@babel/eslint-parser": "~7.17.0",
-    "@commitlint/cli": "~16.1.0",
+    "@commitlint/cli": "~16.2.0",
     "@dcloudio/types": "~2.5.16",
     "@dcloudio/uni-automator": "~3.0.0-alpha-3031120220208001",
     "@dcloudio/uni-cli-shared": "~3.0.0-alpha-3031120220208001",
