@@ -21,12 +21,7 @@ export default defineConfig({
     env({
       prefix: 'VITE',
     }),
-    // use exclude to fix two errors
-    // [plugin:vite:eslint] No files matching 'src/pages.json.js' were found.
-    // [plugin:vite:eslint] No files matching 'src/manifest.json.js' were found.
-    // https://github.com/dcloudio/uni-app/issues/3247
     eslint({
-      exclude: ['node_modules', './src/pages.json.js', './src/manifest.json.js'],
       fix: true,
     }),
     stylelint({
