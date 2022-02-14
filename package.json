@@ -76,7 +76,7 @@
     "@dcloudio/uni-automator": "~3.0.0-alpha-3030820220114011",
     "@dcloudio/uni-cli-shared": "~3.0.0-alpha-3030820220114011",
     "@dcloudio/vite-plugin-uni": "~3.0.0-alpha-3030820220114011",
-    "@iconify/json": "~2.0.36",
+    "@iconify/json": "~2.1.0",
     "@modyqyw/fabric": "~4.12.0",
     "@tailwindcss/aspect-ratio": "~0.4.0",
     "@tailwindcss/forms": "~0.4.0",
