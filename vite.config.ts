@@ -1,10 +1,8 @@
 import path from 'path';
 // import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
-// @ts-ignore
 import uni from '@dcloudio/vite-plugin-uni';
 import env from 'vite-plugin-env-compatible';
-import legacy from '@vitejs/plugin-legacy';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 
@@ -18,12 +16,12 @@ export default defineConfig({
       vueOptions: {
         reactivityTransform: true,
       },
+      viteLegacyOptions: {
+        targets: ['android >= 6', 'ios >= 10'],
+      },
     }),
     env({
       prefix: 'VITE',
-    }),
-    legacy({
-      targets: ['android >= 6', 'ios >= 10'],
     }),
     eslint({
       fix: true,
