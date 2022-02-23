@@ -8,6 +8,9 @@ import stylelint from 'vite-plugin-stylelint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    target: 'es2015',
+  },
   plugins: [
     uni({
       // FIX: nothing happened, must use UNI_OUTPUT_DIR
@@ -17,7 +20,7 @@ export default defineConfig({
         reactivityTransform: true,
       },
       viteLegacyOptions: {
-        targets: ['android >= 6', 'ios >= 10'],
+        targets: ['defaults', 'android >= 6', 'ios >= 10'],
       },
     }),
     env({
