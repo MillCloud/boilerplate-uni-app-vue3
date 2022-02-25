@@ -3,7 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import env from 'vite-plugin-env-compatible';
-import eslint from 'vite-plugin-eslint';
+import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 
 // https://vitejs.dev/config/
