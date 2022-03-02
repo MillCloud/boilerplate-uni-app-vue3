@@ -81,7 +81,7 @@
     "@modyqyw/fabric": "^4.13.1",
     "@modyqyw/vite-plugin-eslint": "^1.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "@types/color": "^3.0.3",
