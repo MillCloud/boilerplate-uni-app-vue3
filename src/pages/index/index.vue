@@ -4,6 +4,7 @@
     <view class="flex justify-center">
       <text class="text-xl">{{ title }}</text>
     </view>
+    <button>test</button>
   </view>
 </template>
 
