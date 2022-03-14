@@ -30,6 +30,14 @@ export default defineConfig({
         }),
       ],
     },
+    preprocessorOptions: {
+      preprocessorOptions: {
+        scss: {
+          charset: false,
+          additionalData: `@use "@/styles/variables.scss" as *;`,
+        },
+      },
+    },
   },
   plugins: [
     uni({
