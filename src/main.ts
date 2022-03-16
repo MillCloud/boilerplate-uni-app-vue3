@@ -5,6 +5,7 @@ import { createPinia } from 'pinia';
 import { createSSRApp } from 'vue';
 import App from './App.vue';
 import '@/styles/preflight.scss';
+import '@/styles/tailwind.scss';
 import '@/styles/global.scss';
 
 dayjs.locale('zh-cn');
