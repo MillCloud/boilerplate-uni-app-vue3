@@ -16,6 +16,8 @@
     "build:quickapp-webview": "cross-env UNI_OUTPUT_DIR=dist/quickapp-webview uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "cross-env UNI_OUTPUT_DIR=dist/quickapp-webview-huawei uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "cross-env UNI_OUTPUT_DIR=dist/quickapp-webview-union uni build -p quickapp-webview-union",
+    "check:deps": "ncu",
+    "check:types": "vue-tsc --noEmit",
     "commit": "git-cz",
     "dev:app": "uni -p app",
     "dev:custom": "uni -p",
@@ -35,7 +37,8 @@
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue,svelte}\" --fix --allow-empty-input --ignore-path=.gitignore",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "release": "release-it"
   },
   "config": {
     "commitizen": {
