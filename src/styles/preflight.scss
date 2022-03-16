@@ -2,13 +2,10 @@
 // based on ress.css v5.0.2
 // https://resset.dev/
 
-html,
-page {
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  word-break: normal;
-  -moz-tab-size: 4;
-  tab-size: 4;
+// for miniprogram
+button,
+button::after {
+  all: unset;
 }
 
 html,
@@ -64,6 +61,15 @@ page-meta,
 ::after {
   box-sizing: inherit;
   background-repeat: no-repeat;
+}
+
+html,
+page {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  word-break: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
 }
 
 ::before,
@@ -240,6 +246,7 @@ optgroup {
 }
 
 button {
+  -webkit-tap-highlight-color: transparent; // extra for miniprogram
   overflow: visible;
 }
 
@@ -256,13 +263,6 @@ button,
   cursor: pointer;
 }
 
-// extra for miniprogram
-// remove all button:after styles
-// comment it if cause bugs
-button::after {
-  all: unset;
-}
-
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -271,15 +271,15 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-button:-moz-focusring,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  outline: 1px dotted ButtonText;
-}
+// button:-moz-focusring,
+// [type="button"]::-moz-focus-inner,
+// [type="reset"]::-moz-focus-inner,
+// [type="submit"]::-moz-focus-inner {
+//   outline: 1px dotted ButtonText;
+// }
 
-// comment it if cause bugs
-button,
+// remove these if cause bugs
+// button,
 html [type="button"],
 page [type="button"],
 [type="reset"],
