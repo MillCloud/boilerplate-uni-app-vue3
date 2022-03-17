@@ -21,6 +21,10 @@
         Primary Button
       </button>
     </view>
+    <view class="flex justify-center p-4">
+      <template v-if="isLoading">Loading...</template>
+      <template v-else>{{ data }}</template>
+    </view>
   </view>
 </template>
 
@@ -29,6 +33,11 @@
   lang="ts"
 >
 import { ref } from 'vue';
+import { useQuery } from 'vue-query';
 
 const title = ref('Hello UniApp');
+
+const { data, isLoading } = useQuery<IResponseData, IResponseError>([
+  'https://jsonplaceholder.typicode.com/todos/1',
+]);
 </script>
