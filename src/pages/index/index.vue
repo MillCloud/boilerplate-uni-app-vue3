@@ -1,9 +1,6 @@
 <template>
   <view class="container items-center justify-center">
-    <image
-      class="m-4 mx-auto block h-20 w-20"
-      src="/static/logo.png"
-    />
+    <image class="m-4 mx-auto block h-20 w-20" src="/static/logo.png" />
     <view class="flex w-full justify-center">
       <text class="text-xl">{{ title }}</text>
     </view>
@@ -31,10 +28,7 @@
   </view>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useQuery } from 'vue-query';
 
