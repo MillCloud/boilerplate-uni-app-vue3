@@ -11,3 +11,6 @@ export const Headers = {
 export const PageLimitKey = 'pageLimit';
 export const DefaultPageLimit: TPageLimit = 10;
 export const PageLimits: TPageLimit[] = [10, 20, 30];
+
+export const TokenKey = 'token';
+export const DefaultToken = '';
