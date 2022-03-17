@@ -38,7 +38,8 @@
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue,svelte}\" --fix --allow-empty-input --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
-    "release": "release-it"
+    "release": "release-it",
+    "watch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml patch-mp-alipay.mjs"
   },
   "config": {
     "commitizen": {
@@ -58,6 +59,7 @@
     "@dcloudio/uni-mp-toutiao": "^3.0.0-alpha-3040220220310003",
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3040220220310003",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3040220220310003",
+    "@dcloudio/uni-ui": "^1.4.12",
     "@iconify/vue": "^3.1.4",
     "@vueuse/core": "^8.0.1",
     "@vueuse/integrations": "^8.0.1",
@@ -68,6 +70,7 @@
     "query-string": "^7.1.1",
     "ramda": "^0.28.0",
     "statuses": "^2.0.1",
+    "thorui-uni": "^1.7.2",
     "vue": "^3.2.31",
     "vue-query": "^1.19.2"
   },
@@ -116,8 +119,6 @@
     "tailwindcss": "^3.0.23",
     "type-fest": "^2.12.0",
     "typescript": "^4.6.2",
-    "unplugin-icons": "^0.13.4",
-    "unplugin-vue-components": "0.17.21",
     "vite": "^2.8.6",
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-plugin-stylelint": "^1.2.0",
