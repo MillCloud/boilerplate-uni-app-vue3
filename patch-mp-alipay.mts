@@ -4,7 +4,7 @@ import path from 'path';
 
 console.log('Patching dist/mp-alipay/pages/**/*.axml ...');
 
-const handleAddPageMeta = (pagesDirPath) => {
+const handleAddPageMeta = (pagesDirPath: string) => {
   // make sure exist
   if (!fs.existsSync(pagesDirPath)) {
     console.log('Done with not exist.');
@@ -31,9 +31,8 @@ const handleAddPageMeta = (pagesDirPath) => {
   dirs.forEach((dir) => {
     handleAddPageMeta(path.resolve(pagesDirPath, dir));
   });
+  console.log('Done with exists.');
 };
 
 handleAddPageMeta(path.resolve('dist', 'mp-alipay', 'pages'));
-
-console.log('Done with exists.');
 /* eslint-enable no-console */

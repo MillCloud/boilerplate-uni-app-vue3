@@ -14,5 +14,6 @@ module.exports = {
   },
   hooks: {
     'before:init': 'npm install --legacy-peer-deps && npm run lint',
+    'after:bump': 'esmo update-manifest.mjs',
   },
 };
