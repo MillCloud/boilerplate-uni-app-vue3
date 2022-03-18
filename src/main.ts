@@ -6,8 +6,8 @@ import { createSSRApp } from 'vue';
 import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import { vueQueryPluginOptions } from './utils';
-import '@/styles/preflight.scss';
-import '@/styles/tailwind.scss';
+import '@/styles/preflight.css';
+import '@/styles/tailwind.css';
 import '@/styles/global.scss';
 
 dayjs.locale('zh-cn');
