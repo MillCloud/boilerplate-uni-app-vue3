@@ -5,6 +5,7 @@ import { createPinia } from 'pinia';
 import { createSSRApp } from 'vue';
 import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
+import Components from './components';
 import { vueQueryPluginOptions } from './utils';
 import '@/styles/preflight.css';
 import '@/styles/tailwind.css';
@@ -14,8 +15,9 @@ dayjs.locale('zh-cn');
 dayjs.extend(customParseFormat);
 
 export function createApp() {
-  const app = createSSRApp(App).use(createPinia()).use(VueQueryPlugin, vueQueryPluginOptions);
-  return {
-    app,
-  };
+  const app = createSSRApp(App)
+    .use(createPinia())
+    .use(VueQueryPlugin, vueQueryPluginOptions)
+    .use(Components);
+  return { app };
 }
