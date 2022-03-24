@@ -25,6 +25,7 @@
     "chrmarti.regex",
     "syler.sass-indented",
     "mrmlnc.vscode-scss",
+    "sonarsource.sonarlint-vscode",
     "stylelint.vscode-stylelint",
     "jock.svg",
     "bradlc.vscode-tailwindcss",
