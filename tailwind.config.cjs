@@ -1,32 +1,29 @@
-/* eslint-disable global-require */
 const color = require('color');
+const tailwindcssTypography = require('@tailwindcss/typography');
+const tailwindcssLineClamp = require('@tailwindcss/line-clamp');
+const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio');
 
-// Remember to update colors in ./src/styles/global.scss
+// Remember to update colors in ./src/styles/variables.scss
 // https://element-plus.gitee.io/zh-CN/component/color.html
 const colorMap = {
   primary: {
     base: '#409eff',
-    default: '#409eff',
     DEFAULT: '#409eff',
   },
   success: {
     base: '#67c23a',
-    default: '#67c23a',
     DEFAULT: '#67c23a',
   },
   warning: {
     base: '#e6a23c',
-    default: '#e6a23c',
     DEFAULT: '#e6a23c',
   },
   danger: {
     base: '#f56c6c',
-    default: '#f56c6c',
     DEFAULT: '#f56c6c',
   },
   info: {
     base: '#909399',
-    default: '#909399',
     DEFAULT: '#909399',
   },
   'primary-text': '#303133',
@@ -54,8 +51,15 @@ types.forEach((type) => {
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    screens: {},
     extend: {
+      screens: {
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1200px',
+        '2xl': '1600px',
+        xxl: '1600px',
+      },
       colors: {
         ...Object.entries(colorMap).reduce(
           (acc, [key, value]) => ({
@@ -71,13 +75,8 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [tailwindcssTypography, tailwindcssLineClamp, tailwindcssAspectRatio],
   corePlugins: {
     preflight: false,
   },
 };
-/* eslint-enable global-require */
