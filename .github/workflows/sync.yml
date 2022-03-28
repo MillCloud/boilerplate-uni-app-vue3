@@ -15,4 +15,4 @@ jobs:
           source-repo: git@github.com:MillCloud/boilerplate-uni-app-vue3.git
           destination-repo: git@gitee.com:MillCloud/boilerplate-uni-app-vue3.git
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
