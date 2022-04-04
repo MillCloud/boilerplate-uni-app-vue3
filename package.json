@@ -73,7 +73,7 @@
     "statuses": "^2.0.1",
     "thorui-uni": "^1.7.2",
     "vue": "^3.2.31",
-    "vue-query": "1.22.0"
+    "vue-query": "1.22.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
