@@ -1,8 +1,8 @@
 /* stylelint-disable property-no-vendor-prefix, no-descending-specificity */
-// based on ress.css v5.0.2
-// https://resset.dev/
+/* based on ress.css v5.0.2 */
+/* https://resset.dev/ */
 
-// for miniprogram
+/* for miniprogram */
 button,
 button::after {
   all: unset;
@@ -246,7 +246,7 @@ optgroup {
 }
 
 button {
-  -webkit-tap-highlight-color: transparent; // extra for miniprogram
+  -webkit-tap-highlight-color: transparent; /* for miniprogram */
   overflow: visible;
 }
 
@@ -271,15 +271,15 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-// button:-moz-focusring,
-// [type="button"]::-moz-focus-inner,
-// [type="reset"]::-moz-focus-inner,
-// [type="submit"]::-moz-focus-inner {
-//   outline: 1px dotted ButtonText;
-// }
+/* button:-moz-focusring,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+} */
 
-// remove these if cause bugs
-// button,
+/* remove these if cause bugs */
+/* button, */
 html [type="button"],
 page [type="button"],
 [type="reset"],
