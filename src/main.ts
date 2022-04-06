@@ -6,7 +6,7 @@ import { createSSRApp } from 'vue';
 import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import Components from './components';
-import { vueQueryPluginOptions } from './utils';
+import { vueQueryPluginOptions } from './helpers';
 import '@/styles/preflight.css';
 import '@/styles/tailwind.css';
 import '@/styles/global.scss';

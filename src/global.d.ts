@@ -48,8 +48,6 @@ declare global {
     showError?: boolean;
     showErrorType?: 'toast' | 'modal';
   }
-
-  type TPageLimit = 10 | 20 | 30;
 }
 
 export {};
