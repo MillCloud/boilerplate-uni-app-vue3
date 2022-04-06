@@ -44,7 +44,7 @@ declare global {
     response?: IResponse;
   }
 
-  interface IMutationVariables extends BaseRequestConfig {
+  interface IRequestConfig extends BaseRequestConfig {
     showError?: boolean;
     showErrorType?: 'toast' | 'modal';
   }

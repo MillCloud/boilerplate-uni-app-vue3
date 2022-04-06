@@ -34,7 +34,7 @@ import { useQuery } from 'vue-query';
 
 const title = ref('Hello UniApp');
 
-const { data, isLoading } = useQuery<IResponseData, IResponseError>([
-  'https://jsonplaceholder.typicode.com/todos/1',
-]);
+const id = ref(1);
+
+const { data, isLoading } = useQuery<IResponseData, IResponseError>([id]);
 </script>

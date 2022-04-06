@@ -1,6 +1,4 @@
-import { isObject } from 'lodash-es';
 import qs from 'query-string';
-import { isRef, isReactive, unref } from 'vue';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
 import { showModal } from './modal';
@@ -14,7 +12,8 @@ const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_S
 export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
   config: BaseRequestConfig<D>,
 ) {
-  const baseURL = process.env.VITE_REQUEST_BASE_URL || '';
+  const baseURL =
+    process.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/';
   const stringifiedParams = qs.stringify(
     Object.fromEntries(
       Object.entries(config.params ?? {}).filter(
@@ -35,8 +34,9 @@ export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
         ...Headers,
         ...config.header,
         ...config.headers,
-        token: getToken() || '',
-        'X-Token': getToken() || '',
+        token: getToken(),
+        'X-Token': getToken(),
+        'X-Access-Token': getToken(),
       },
       success: (response) => resolve(response as unknown as R),
       fail: (error) => reject(error),
@@ -134,32 +134,9 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('queryKey', queryKey);
         // console.log('');
-        let url = `${queryKey[0]}`;
-        if (Array.isArray(queryKey[1])) {
-          queryKey[1].forEach((item, index) => {
-            url = url.replace(`:${index}`, `${unref(item)}`);
-          });
-        } else if (queryKey[1]) {
-          url += `${unref(queryKey[1])}`;
-        }
-        let params: Record<string, any> = {};
-        if (isReactive(queryKey[2]) || isRef(queryKey[2]) || isObject(queryKey[2])) {
-          params = Object.fromEntries(
-            Object.entries({
-              ...params,
-              ...unref(queryKey[2] as Record<string, any>),
-            }).map(([k, v]) => [unref(k), unref(v)]),
-          );
-        }
-        let config: Record<string, any> = {};
-        if (isReactive(queryKey[3]) || isRef(queryKey[3]) || isObject(queryKey[3])) {
-          config = Object.fromEntries(
-            Object.entries({
-              ...config,
-              ...unref(queryKey[3] as Record<string, any>),
-            }).map(([k, v]) => [unref(k), unref(v)]),
-          );
-        }
+        const url = (queryKey[0] as any)?.toString();
+        const params = queryKey[1] as Record<string, any>;
+        const config = queryKey[2] as IRequestConfig;
         const { data } = await request<IResponseData>({
           method: 'GET',
           url,
@@ -174,10 +151,10 @@ export const queryClient = new QueryClient({
                 errMsg: '请重新登录。',
               },
             });
-          } else if ((queryKey[1] as Record<string, any>)?.showError ?? true) {
+          } else if (config?.showError ?? true) {
             showError({
               error: data as unknown as IResponseError,
-              type: (queryKey[1] as Record<string, any>)?.showErrorType,
+              type: config?.showErrorType,
             });
           }
         }
@@ -204,14 +181,10 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
+        const config = { ...(variables as IRequestConfig) };
         const { data } = await request<IResponseData>({
           method: 'POST',
-          ...Object.fromEntries(
-            Object.entries(unref(variables) as Record<string, any>).map(([k, v]) => [
-              unref(k),
-              unref(v),
-            ]),
-          ),
+          ...config,
         });
         if (!(data?.success ?? true)) {
           if (reSignInCodes.has(data.code)) {
@@ -221,10 +194,10 @@ export const queryClient = new QueryClient({
                 errMsg: '请重新登录。',
               },
             });
-          } else if ((variables as Record<string, any>)?.showError ?? true) {
+          } else if (config?.showError ?? true) {
             showError({
               error: data as unknown as IResponseError,
-              type: (variables as Record<string, any>)?.showErrorType,
+              type: config?.showErrorType,
             });
           }
         }
