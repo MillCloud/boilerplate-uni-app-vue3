@@ -134,9 +134,13 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('queryKey', queryKey);
         // console.log('');
-        const url = (queryKey[0] as any)?.toString();
-        const params = queryKey[1] as Record<string, any>;
-        const config = queryKey[2] as IRequestConfig;
+        const urlParams = Array.isArray(queryKey[1]) ? queryKey[1] : [];
+        const url = urlParams.reduce(
+          (acc, cur, idx) => acc.replace(`:${idx}`, cur.toString()),
+          (queryKey[0] as any).toString(),
+        );
+        const params = queryKey[2] as Record<string, any>;
+        const config = queryKey[3] as IRequestConfig;
         const { data } = await request<IResponseData>({
           method: 'GET',
           url,
