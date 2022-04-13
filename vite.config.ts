@@ -43,7 +43,7 @@ export default defineConfig({
         reactivityTransform: true,
       },
       viteLegacyOptions: {
-        targets: ['defaults', 'android >= 6', 'ios >= 10'],
+        targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
     env({
