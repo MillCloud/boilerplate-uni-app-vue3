@@ -138,6 +138,9 @@ npm install --legacy-peer-deps
 ├── .github                     # github 配置目录
 ├── .husky                      # husky 配置目录
 ├── public
+├── scripts
+│   ├── patch-mp-alipay.mts     # 运行到支付宝小程序时的 patch
+│   ├── update-manifest.mts     # 配置 release-it 自动更新 manifest.json 的文件
 ├── src
 │   ├── components              # 全局组件目录
 │   ├── composables             # 全局组合式 API 目录
@@ -165,12 +168,10 @@ npm install --legacy-peer-deps
 ├── index.html
 ├── package-lock.json
 ├── package.json
-├── patch-mp-alipay.mts         # 运行到支付宝小程序时的 patch
 ├── README.md
 ├── renovate.json               # renovate 配置文件
 └── tailwind.config.cjs         # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
-├── update-manifest.mts         # 配置 release-it 自动更新 manifest.json 的文件
 └── vite.config.ts              # vite 配置文件
 ```
 

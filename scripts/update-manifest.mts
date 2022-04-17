@@ -1,6 +1,6 @@
 import fs from 'fs';
-import pkg from './package.json';
-import manifest from './src/manifest.json';
+import pkg from '../package.json';
+import manifest from '../src/manifest.json';
 
 manifest.versionName = pkg.version;
 manifest.versionCode = (Number.parseInt(manifest.versionCode, 10) + 1).toString();
