@@ -1,9 +1,8 @@
-const { eslint } = require('@modyqyw/fabric');
-
 module.exports = {
-  ...eslint.vue3TypescriptPrettier,
-  rules: {
-    ...eslint.vue3TypescriptPrettier.rules,
-    'vue-scoped-css/enforce-style-type': 'off',
-  },
+  extends: [
+    require.resolve('@modyqyw/fabric/eslint/vanilla'),
+    require.resolve('@modyqyw/fabric/eslint/typescript'),
+    require.resolve('@modyqyw/fabric/eslint/vue'),
+    require.resolve('@modyqyw/fabric/eslint/miniprogram'),
+  ],
 };

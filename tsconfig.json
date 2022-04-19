@@ -8,23 +8,5 @@
     },
     "types": ["@dcloudio/types", "type-fest", "vite/client", "vue/macros-global"]
   },
-  "include": [
-    "./**/.*.js",
-    "./**/.*.cjs",
-    "./**/.*.mjs",
-    "./**/*.js",
-    "./**/*.cjs",
-    "./**/*.mjs",
-    "./**/*.jsx",
-    "./**/.*.ts",
-    "./**/.*.cts",
-    "./**/.*.mts",
-    "./**/*.ts",
-    "./**/*.cts",
-    "./**/*.mts",
-    "./**/*.tsx",
-    "./**/*.vue",
-    "./**/*.svelte"
-  ],
-  "exclude": [".cache", ".temp", ".tmp", "dist*", "node_modules"]
+  "exclude": [".cache", ".temp", ".tmp", "cache", "temp", "tmp", "dist*", "node_modules"]
 }

@@ -1,5 +1,8 @@
-const { stylelint } = require('@modyqyw/fabric');
-
 module.exports = {
-  ...stylelint.scssPrettier,
+  extends: [
+    '@modyqyw/fabric/stylelint/css',
+    '@modyqyw/fabric/stylelint/scss',
+    '@modyqyw/fabric/stylelint/vue',
+    '@modyqyw/fabric/stylelint/miniprogram',
+  ],
 };
