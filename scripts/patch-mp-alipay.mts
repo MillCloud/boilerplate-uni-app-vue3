@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 console.log('Patching dist/mp-alipay/pages/**/*.axml ...');
 
@@ -16,21 +16,21 @@ const handleAddPageMeta = (pagesDirPath: string) => {
 
   // deal with .axml
   const axmls = pagesDir.filter((item) => item.endsWith('.axml'));
-  axmls.forEach((axml) => {
+  for (const axml of axmls) {
     const axmlPath = path.resolve(pagesDirPath, axml);
     const axmlContent = fs.readFileSync(axmlPath, {
-      encoding: 'utf-8',
+      encoding: 'utf8',
     });
     if (!axmlContent.startsWith('<page-meta root-font-size="16px"></page-meta>')) {
       fs.writeFileSync(axmlPath, `<page-meta root-font-size="16px"></page-meta>${axmlContent}`);
     }
-  });
+  }
 
   // deal with folder
   const dirs = pagesDir.filter((item) => !item.includes('.'));
-  dirs.forEach((dir) => {
+  for (const dir of dirs) {
     handleAddPageMeta(path.resolve(pagesDirPath, dir));
-  });
+  }
   console.log('Done with exists.');
 };
 

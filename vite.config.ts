@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 // import { fileURLToPath } from 'url';
 import uni from '@dcloudio/vite-plugin-uni';
 import eslint from '@modyqyw/vite-plugin-eslint';

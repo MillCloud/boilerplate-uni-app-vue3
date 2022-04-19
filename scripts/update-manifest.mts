@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import pkg from '../package.json';
 import manifest from '../src/manifest.json';
 
