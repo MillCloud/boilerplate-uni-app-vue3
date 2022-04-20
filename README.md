@@ -1,6 +1,6 @@
 # boilerplate-uni-app-vue3
 
-WIP
+**已经迁移到 [MillCloud/presets](https://github.com/MillCloud/presets)。**
 
 ## 简介
 
